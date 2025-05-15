@@ -90,18 +90,15 @@ app.use("/api/ml", mlRoutes);
 app.use('/api/risk', riskRoutes);
 app.use("/api/recommend", recommendationRoutes);
 
-
-
-
-
-
-
 // ✅ Debugging: Log Registered Routes
 console.log("\n📌 Registered API Routes:");
 app._router.stack.forEach((middleware) => {
   if (middleware.route) {
     console.log(`✅ ${Object.keys(middleware.route.methods).join(', ').toUpperCase()} ${middleware.route.path}`);
   }
+});
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "🚀 Backend API is alive" });
 });
 
 // ✅ Ensure Undefined Routes Return 404 AFTER All Routes Are Defined
@@ -115,11 +112,6 @@ app.use((err, req, res, next) => {
     console.error('❌ Global Error:', err);
     res.status(500).json({ error: err.message || 'Internal Server Error' });
 });
-
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "🚀 Backend API is alive" });
-});
-
 
 // ✅ Start the Server
 const PORT = process.env.PORT || 5000;
