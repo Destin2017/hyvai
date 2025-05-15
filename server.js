@@ -115,7 +115,9 @@ app.use((err, req, res, next) => {
     console.error('❌ Global Error:', err);
     res.status(500).json({ error: err.message || 'Internal Server Error' });
 });
-
+app.get("/", (req, res) => {
+  res.json({ message: "Backend API is alive 🧠⚡" });
+});
 
 // ✅ Start the Server
 const PORT = process.env.PORT || 5000;
