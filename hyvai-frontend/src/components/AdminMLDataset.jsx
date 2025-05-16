@@ -36,9 +36,9 @@ const AdminMLDataset = () => {
   const [predictions, setPredictions] = useState([]);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const DATA_API = "http://localhost:5000/api/ml/dataset";
-  const COMP_API = "http://localhost:5000/api/admin/companies";
-  const PREDICT_API = "http://localhost:8000/predict-risk";
+  const DATA_API = "http://13.60.35.161:5000/api/ml/dataset";
+  const COMP_API = "http://13.60.35.161:5000/api/admin/companies";
+  const PREDICT_API = "http://13.60.35.161:8000/predict-risk";
 
   useEffect(() => {
     const fetchAll = async () => {
