@@ -15,7 +15,7 @@ const PaymentHistory = () => {
       if (!token) return;
 
       try {
-        const response = await axios.get("http://localhost:5000/api/installments/history", {
+        const response = await axios.get("http://13.60.35.161:5000/api/installments/history", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setHistory(response.data);
