@@ -19,7 +19,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.get(`http://13.60.35.161:5000/api/products/${id}`);
         setProduct(response.data);
       } catch (error) {
         console.error("Error fetching product:", error);
@@ -49,7 +49,7 @@ const ProductDetailPage = () => {
 
     try {
       const statusRes = await axios.get(
-        "http://localhost:5000/api/installments/status",
+        "http://13.60.35.161:5000/api/installments/status",
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -60,7 +60,7 @@ const ProductDetailPage = () => {
       }
 
       const applyRes = await axios.post(
-        "http://localhost:5000/api/installments/apply",
+        "http://13.60.35.161:5000/api/installments/apply",
         { product_id: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
