@@ -27,7 +27,7 @@ const RiskMonitorDashboard = () => {
   const token = sessionStorage.getItem("userToken");
   const headers = useMemo(() => ({ Authorization: `Bearer ${token}` }), [token]);
 
-  const API_BASE = "http://localhost:5000/api/risk";
+  const API_BASE = "http://13.60.35.161:5000/api/risk";
 
   const fetchCurrentUser = useCallback(async () => {
     try {
@@ -40,7 +40,7 @@ const RiskMonitorDashboard = () => {
 
   const fetchCompanies = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/companies", { headers });
+      const res = await axios.get("http://13.60.35.161:5000/api/admin/companies", { headers });
       setCompanies(res.data);
     } catch (err) {
       console.error("❌ Failed to load companies", err);
@@ -82,7 +82,7 @@ const RiskMonitorDashboard = () => {
 
   const fetchTopProducts = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/recommend/top-products", { headers });
+      const res = await axios.get("http://13.60.35.161:5000/api/recommend/top-products", { headers });
       setTopProducts(res.data);
     } catch (err) {
       console.error("❌ Failed to fetch top products", err);
@@ -102,7 +102,7 @@ const RiskMonitorDashboard = () => {
 
   const handleRecommendProduct = async (productId, isCurrentlyRecommended) => {
     try {
-      await axios.post("http://localhost:5000/api/recommend/toggle", {
+      await axios.post("http://13.60.35.161:5000/api/recommend/toggle", {
         productId: productId,
         isRecommended: !isCurrentlyRecommended,
       }, { headers });
