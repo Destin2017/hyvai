@@ -23,7 +23,7 @@ const limiter = rateLimit({
 app.use('/api/', limiter); // Apply rate limiter to API routes
 
 // ✅ Enable CORS with Credentials Support
-const allowedOrigins = ['http://localhost:3000']; // 🔥 Add frontend URLs
+const allowedOrigins = ['http://http://13.60.35.161/:3000']; // 🔥 Add frontend URLs
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
