@@ -5,7 +5,7 @@ const AdminOverviewDashboard = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API = "http://localhost:5000/api/admin/dashboard-insights";
+  const API = "http://13.60.35.161:5000/api/admin/dashboard-insights";
 
   useEffect(() => {
     const fetchInsights = async () => {
