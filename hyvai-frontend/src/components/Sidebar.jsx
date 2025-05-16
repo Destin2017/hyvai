@@ -13,7 +13,7 @@ const Sidebar = ({ setSelectedTab }) => {
   const { token } = useContext(AuthContext);
   const { t } = useTranslation();
 
-  const API_BASE_URL = "http://localhost:5000";
+  const API_BASE_URL = "http://13.60.35.161:5000";
 
   useEffect(() => {
     const fetchScore = async () => {
