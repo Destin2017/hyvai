@@ -33,20 +33,20 @@ const AdminPerformanceDashboard = () => {
       const dateQuery = startDate && endDate ? `&start_date=${startDate}&end_date=${endDate}` : "";
 
       const analyticsRes = await axios.get(
-        `http://localhost:5000/api/admin/analytics?${companyQuery}${dateQuery}`,
+        `http://13.60.35.161:5000/api/admin/analytics?${companyQuery}${dateQuery}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setAnalytics(analyticsRes.data || []);
 
       const employeesRes = await axios.get(
-        `http://localhost:5000/api/admin/analytics/employees?${companyQuery}${dateQuery}`,
+        `http://13.60.35.161:5000/api/admin/analytics/employees?${companyQuery}${dateQuery}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setEmployees(employeesRes.data || []);
 
       if (companies.length === 0) {
         const companyRes = await axios.get(
-          "http://localhost:5000/api/admin/companies",
+          "http://13.60.35.161:5000/api/admin/companies",
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setCompanies(companyRes.data || []);
