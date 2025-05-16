@@ -161,7 +161,7 @@ const ProductsPage = () => {
                 <div className="relative w-full h-64">
                   <Link to={`/products/${product.id}`}>
                     <img
-                      src={`http://localhost:5000/uploads/${images[currentImages[product.id]]}`}
+                      src={`http://13.60.35.161:5000/uploads/${images[currentImages[product.id]]}`}
                       alt={product.name}
                       className="absolute inset-0 w-full h-full object-contain rounded-lg bg-gray-100"
                       onError={(e) => { e.target.src = "/placeholder.png"; }}
