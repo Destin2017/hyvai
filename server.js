@@ -23,25 +23,18 @@ const limiter = rateLimit({
 app.use('/api/', limiter); // Apply rate limiter to API routes
 
 // ✅ Enable CORS with Credentials Support
-const allowedOrigins = ['http://http://13.60.35.161/:3000']; // 🔥 Add frontend URLs
+const allowedOrigins = ['http://13.60.35.161'];
+
 app.use(cors({
-  origin: (origin, callback) => {
+  origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      console.warn("🚨 CORS blocked request from:", origin);
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error('Not allowed by CORS'));
     }
   },
   credentials: true,
 }));
-
-// ✅ Enable CORS for your frontend origin
-app.use(cors({
-  origin: 'http://13.60.35.161',  // Or '*' to allow all (not recommended for prod)
-  credentials: true
-}));
-
 
 app.use(express.json()); // ✅ Parse JSON body
 app.use(cookieParser()); // ✅ Parse JWT token from cookies
