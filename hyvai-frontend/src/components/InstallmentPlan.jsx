@@ -16,7 +16,7 @@ const InstallmentPlan = () => {
         }
 
         console.log("🔹 Fetching installment plan...");
-        const response = await axios.get("http://localhost:5000/api/installments/plan", {
+        const response = await axios.get("http://13.60.35.161:5000/api/installments/plan", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
