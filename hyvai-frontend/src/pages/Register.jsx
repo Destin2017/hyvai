@@ -25,7 +25,7 @@ const Register = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/auth/companies");
+        const response = await axios.get("http://13.60.35.161:5000/api/auth/companies");
         setCompanies(response.data);
       } catch (error) {
         console.error("❌ Error fetching companies:", error);
@@ -77,7 +77,7 @@ const Register = () => {
         company_id
       };
 
-      const response = await axios.post("http://localhost:5000/api/auth/register", requestData);
+      const response = await axios.post("http://13.60.35.161:5000/api/auth/register", requestData);
       alert(response.data.message);
       navigate("/login");
     } catch (err) {
