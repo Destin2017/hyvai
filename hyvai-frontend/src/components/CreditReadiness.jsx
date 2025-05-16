@@ -24,7 +24,7 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip,
 const CreditReadiness = () => {
   const { t } = useTranslation();
   const { token } = useContext(AuthContext);
-  const API_BASE_URL = "http://localhost:5000";
+  const API_BASE_URL = "http://13.60.35.161:5000";
 
   const [score, setScore] = useState(0);
   const [rank, setRank] = useState(t("credit.rank.newbie"));
