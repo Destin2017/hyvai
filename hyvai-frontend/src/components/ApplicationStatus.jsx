@@ -15,7 +15,7 @@ const ApplicationStatus = ({ rejected = null }) => {
       if (!token || rejected) return;
 
       try {
-        const response = await axios.get("http://localhost:5000/api/installments/rejected", {
+        const response = await axios.get("http://13.60.35.161:5000/api/installments/rejected", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
