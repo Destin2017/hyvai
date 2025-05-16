@@ -26,7 +26,7 @@ const EmployeeDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const API_BASE_URL = "http://localhost:5000";
+  const API_BASE_URL = "http://13.60.35.161:5000";
 
   const applyForInstallment = useCallback(async () => {
     const productFromStorage = localStorage.getItem("selectedProduct");
