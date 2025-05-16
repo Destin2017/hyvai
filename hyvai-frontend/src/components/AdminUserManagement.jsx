@@ -18,7 +18,7 @@ const AdminUserManagement = () => {
 
   const fetchUsers = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/users", {
+      const res = await axios.get("http://13.60.35.161:5000/api/admin/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -61,7 +61,7 @@ const AdminUserManagement = () => {
     if (!update || !update.name || !update.role) return;
 
     try {
-      await axios.put(`http://localhost:5000/api/admin/users/${id}`, update, {
+      await axios.put(`http://13.60.35.161:5000/api/admin/users/${id}`, update, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSuccessMessage(`✅ "${update.name}" updated successfully.`);
