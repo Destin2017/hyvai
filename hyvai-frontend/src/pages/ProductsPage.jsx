@@ -41,7 +41,7 @@ const ProductsPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/products");
+      const response = await axios.get("http://13.60.35.161:5000/api/products");
       setProducts(response.data);
       const initialImageIndexes = response.data.reduce((acc, product) => {
         acc[product.id] = 0;
@@ -55,7 +55,7 @@ const ProductsPage = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/categories");
+      const response = await axios.get("http://13.60.35.161:5000/api/categories");
       setCategories([{ id: "all", name: "New" }, ...response.data]);
     } catch (error) {
       console.error("Error fetching categories:", error);
