@@ -12,8 +12,8 @@ const AdminManageInstallments = () => {
   const [viewMode, setViewMode] = useState("ongoing");
   const [refreshKey, setRefreshKey] = useState(0);
 
-  const API = "http://localhost:5000/api/admin/installments";
-  const COMPANY_API = "http://localhost:5000/api/admin/companies";
+  const API = "http://13.60.35.161:5000/api/admin/installments";
+  const COMPANY_API = "http://13.60.35.161:5000/api/admin/companies";
 
   useEffect(() => {
     fetchCompanies();
