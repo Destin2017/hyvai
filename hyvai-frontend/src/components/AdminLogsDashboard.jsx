@@ -22,7 +22,7 @@ const AdminLogsDashboard = () => {
         params.end_date = endDate;
       }
 
-      const res = await axios.get("http://localhost:5000/api/admin/logs", {
+      const res = await axios.get("http://13.60.35.161:5000/api/admin/logs", {
         headers,
         params,
       });
