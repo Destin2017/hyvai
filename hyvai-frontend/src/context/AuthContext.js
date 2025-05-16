@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
     try {
       console.log(`📡 Sending Installment Request for Product ID: ${productId}`);
       const response = await axios.post(
-        "http://localhost:5000/api/installments/apply",
+        "http://13.60.35.161:5000/api/installments/apply",
         { product_id: productId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = await axios.get("http://localhost:5000/api/auth/me", {
+        const response = await axios.get("http://13.60.35.161:5000/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
@@ -78,7 +78,7 @@ export const AuthProvider = ({ children }) => {
     try {
       console.log("🔐 Logging in user...");
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "http://13.60.35.161:5000/api/auth/login",
         { email, password },
         { withCredentials: true }
       );
