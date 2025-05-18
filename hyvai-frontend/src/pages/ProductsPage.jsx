@@ -79,7 +79,7 @@ const ProductsPage = () => {
   };
 
   const filteredProducts = products.filter(product => {
-    const matchesCategory = selectedCategory === "New" || product.category_name === selectedCategory;
+    const matchesCategory = selectedCategory === "New" || categories.find(c => c.id === product.category_id)?.name === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
