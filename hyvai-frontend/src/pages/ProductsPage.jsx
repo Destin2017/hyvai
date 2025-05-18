@@ -39,19 +39,24 @@ const ProductsPage = () => {
     fetchCategories();
   }, []);
 
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get("http://13.60.35.161:5000/api/products");
-      setProducts(response.data);
-      const initialImageIndexes = response.data.reduce((acc, product) => {
-        acc[product.id] = 0;
-        return acc;
-      }, {});
-      setCurrentImages(initialImageIndexes);
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    }
-  };
+ const fetchProducts = async () => {
+  try {
+    const response = await axios.get("http://13.60.35.161:5000/api/products");
+    const productList = Array.isArray(response.data)
+      ? response.data
+      : response.data.data; // ✅ adapt to shape
+    setProducts(productList);
+
+    const initialImageIndexes = productList.reduce((acc, product) => {
+      acc[product.id] = 0;
+      return acc;
+    }, {});
+    setCurrentImages(initialImageIndexes);
+  } catch (error) {
+    console.error("Error fetching products:", error);
+  }
+};
+
 
   const fetchCategories = async () => {
     try {
