@@ -23,7 +23,7 @@ exports.getProducts = async (req, res) => {
       const formattedProducts = products.map((product) => ({
         ...product,
         price: Number(product.price),
-        images: product.image ? product.image.split(",").map(img => `http://localhost:5000/uploads/${img.trim()}`) : [],
+        images: product.image ? product.image.split(",").map(img => `http://13.60.35.161:5000/uploads/${img.trim()}`) : [],
       }));
 
       res.json(formattedProducts);
