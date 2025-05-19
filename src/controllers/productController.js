@@ -55,7 +55,7 @@ exports.getProductById = async (req, res) => {
       }
 
       products[0].images = products[0].image
-        ? products[0].image.split(",").map(img => `http://localhost:5000/uploads/${img.trim()}`)
+        ? products[0].image.split(",").map(img => `http://13.60.35.161:5000/uploads/${img.trim()}`)
         : [];
 
       res.json(products[0]);
