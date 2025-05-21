@@ -118,7 +118,7 @@ const ProductDetailPage = () => {
           {images.map((img, index) => (
             <img
               key={index}
-              src={`http://localhost:5000/uploads/${img.trim()}`}
+              src={`http://13.60.35.161:5000/uploads/${img.trim()}`}
               alt={`Product ${index}`}
               className={`w-full h-64 object-cover rounded-md shadow-md cursor-pointer hover:scale-105 transition-transform ${
                 activeImage === index ? "ring-4 ring-indigo-400" : ""
@@ -165,7 +165,7 @@ const ProductDetailPage = () => {
           <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
             <div className="relative max-w-4xl w-full p-4">
               <img
-                src={`http://localhost:5000/uploads/${images[showPhotoIndex].trim()}`}
+                src={`http://13.60.35.161:5000/uploads/${images[showPhotoIndex].trim()}`}
                 alt=""
                 className="w-full h-auto object-contain rounded-lg"
               />
